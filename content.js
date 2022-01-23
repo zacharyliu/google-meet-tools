@@ -43,6 +43,7 @@ class GoogleMeetTools {
 
       // Update meeting state
       this.meetingStarted = true;
+      chrome.runtime.sendMessage({ type: "meeting_started" });
 
       leaveButton.addEventListener("click", (e) => {
         const confirmed = confirm(

@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "Automatically turn off mic and camera, enable captions, and confirm before leaving a meeting.",
   "manifest_version": 3,
+  "icons": {
+    "128": "google-meet-icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["https://meet.google.com/*"],
       "js": ["content.js"],
       "run_at": "document_start"
     }
-  ]
+  ],
+  "action": {}
 }
