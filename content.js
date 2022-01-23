@@ -46,6 +46,11 @@ class GoogleMeetTools {
       chrome.runtime.sendMessage({ type: "meeting_started" });
 
       leaveButton.addEventListener("click", (e) => {
+        if (!e.isTrusted) {
+          // Ignore programmatic clicks (from other extensions)
+          return;
+        }
+
         const confirmed = confirm(
           "Are you sure you want to leave the meeting?"
         );
