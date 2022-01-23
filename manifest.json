@@ -1,0 +1,13 @@
+{
+  "name": "Google Meet Tools",
+  "version": "1.0.0",
+  "description": "Automatically turn off mic and camera, enable captions, and confirm before leaving a meeting.",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
